@@ -22,7 +22,7 @@ class Autoloader
 {
 	private static $autoloadPathArray = array(
 		"aliyun-php-sdk-core",
-		"aliyun-php-sdk-core/auth",
+		"aliyun-php-sdk-core/Auth",
 		"aliyun-php-sdk-core/Http",
 		"aliyun-php-sdk-core/Profile",
 		"aliyun-php-sdk-core/Regions",
