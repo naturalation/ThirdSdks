@@ -17,8 +17,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace XinXun\Aliyun\Sts\Sts\Request\V20150401;
-use XinXun\Aliyun\Core\RpcAcsRequest;
+namespace Sts\Request\V20150401;
 
 class AssumeRoleRequest extends \RpcAcsRequest
 {
@@ -26,33 +25,16 @@ class AssumeRoleRequest extends \RpcAcsRequest
 	{
 		parent::__construct("Sts", "2015-04-01", "AssumeRole");
 		$this->setProtocol("https");
+		$this->setMethod("POST");
 	}
-
-	private  $durationSeconds;
-
-	private  $policy;
 
 	private  $roleArn;
 
 	private  $roleSessionName;
 
-	public function getDurationSeconds() {
-		return $this->durationSeconds;
-	}
+	private  $durationSeconds;
 
-	public function setDurationSeconds($durationSeconds) {
-		$this->durationSeconds = $durationSeconds;
-		$this->queryParameters["DurationSeconds"]=$durationSeconds;
-	}
-
-	public function getPolicy() {
-		return $this->policy;
-	}
-
-	public function setPolicy($policy) {
-		$this->policy = $policy;
-		$this->queryParameters["Policy"]=$policy;
-	}
+	private  $policy;
 
 	public function getRoleArn() {
 		return $this->roleArn;
@@ -70,6 +52,24 @@ class AssumeRoleRequest extends \RpcAcsRequest
 	public function setRoleSessionName($roleSessionName) {
 		$this->roleSessionName = $roleSessionName;
 		$this->queryParameters["RoleSessionName"]=$roleSessionName;
+	}
+
+	public function getDurationSeconds() {
+		return $this->durationSeconds;
+	}
+
+	public function setDurationSeconds($durationSeconds) {
+		$this->durationSeconds = $durationSeconds;
+		$this->queryParameters["DurationSeconds"]=$durationSeconds;
+	}
+
+	public function getPolicy() {
+		return $this->policy;
+	}
+
+	public function setPolicy($policy) {
+		$this->policy = $policy;
+		$this->queryParameters["Policy"]=$policy;
 	}
 	
 }
